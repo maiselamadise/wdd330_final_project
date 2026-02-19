@@ -73,6 +73,12 @@ button {
 button:hover {
   background-color: #166c6c;
 }
+ footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: #777;
+  font-size: 0.9rem;
+}
 
 /* ===== Responsive ===== */
 @media (max-width: 600px) {
