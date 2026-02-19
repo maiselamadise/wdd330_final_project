@@ -16,34 +16,37 @@ body {
 }
 
 h1 {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   text-align: center;
   color: #1f8688;
 }
 
-/* ===== Filter Section ===== */
+/* ===== Controls ===== */
 label {
   display: block;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   font-weight: 600;
 }
 
-select {
-  margin-left: 0.5rem;
+select,
+input[type="text"] {
+  margin-top: 0.5rem;
   padding: 0.4rem;
   font-size: 1rem;
+  max-width: 300px;
+  width: 100%;
 }
 
-/* ===== Product List ===== */
-ul {
+/* ===== Dynamic Product List (JS) ===== */
+#productList {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1rem;
+  margin-bottom: 2rem;
 }
 
-/* ===== Product Card ===== */
-li {
+#productList li {
   background: white;
   padding: 1rem;
   border-radius: 8px;
@@ -53,13 +56,45 @@ li {
   justify-content: space-between;
 }
 
-li span {
-  margin-bottom: 1rem;
-  font-weight: 500;
+/* ===== Static Gear Grid ===== */
+.gear-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
 
-/* ===== Buttons ===== */
-button {
+.gear-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gear-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.gear-card img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.gear-card h3 {
+  margin-bottom: 0.5rem;
+  color: #1f8688;
+}
+
+.gear-card p {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ===== Buttons / Links ===== */
+button,
+.gear-card a {
   padding: 0.5rem;
   border: none;
   border-radius: 4px;
@@ -67,13 +102,18 @@ button {
   background-color: #1f8688;
   color: white;
   font-weight: 600;
+  text-decoration: none;
+  text-align: center;
   transition: background-color 0.2s ease;
 }
 
-button:hover {
+button:hover,
+.gear-card a:hover {
   background-color: #166c6c;
 }
- footer {
+
+/* ===== Footer ===== */
+footer {
   text-align: center;
   margin-top: 2rem;
   color: #777;
